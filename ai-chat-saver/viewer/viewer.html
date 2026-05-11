@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chat Saver — View Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="viewer.css"/>
+</head>
+<body>
+
+  <!-- ── Top nav bar ─────────────────────────────── -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <button id="btn-back" class="nav-btn" title="Go back">← Back</button>
+      <div class="nav-brand">🤖 AI Chat Saver</div>
+    </div>
+    <div class="nav-right">
+      <span id="nav-source" class="source-chip">—</span>
+      <button id="btn-export" class="nav-btn accent" title="Export as Markdown">⬇ Export .md</button>
+      <button id="btn-delete" class="nav-btn danger" title="Delete this chat">🗑 Delete</button>
+    </div>
+  </nav>
+
+  <!-- ── Main content ────────────────────────────── -->
+  <main class="main">
+
+    <!-- Chat metadata header -->
+    <div class="chat-meta" id="chat-meta">
+      <div class="meta-title" id="meta-title">Loading…</div>
+      <div class="meta-row">
+        <span class="meta-item" id="meta-date">—</span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item" id="meta-count">—</span>
+      </div>
+    </div>
+
+    <!-- Not found state -->
+    <div id="not-found" class="not-found hidden">
+      <div class="not-found-icon">🔍</div>
+      <h2>Chat not found</h2>
+      <p>This chat may have been deleted.</p>
+      <button class="nav-btn accent" onclick="window.close()">Close Tab</button>
+    </div>
+
+    <!-- Message thread -->
+    <div id="message-thread" class="message-thread"></div>
+
+  </main>
+
+  <script src="viewer.js"></script>
+</body>
+</html>

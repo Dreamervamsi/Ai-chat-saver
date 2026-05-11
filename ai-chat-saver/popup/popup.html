@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chat Saver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="popup.css"/>
+</head>
+<body>
+
+  <!-- ── Header ────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo-icon">🤖</div>
+      <div>
+        <h1 class="header-title">AI Chat Saver</h1>
+        <p class="header-sub">100% local &amp; private</p>
+      </div>
+    </div>
+    <button id="btn-clear-all" class="icon-btn" title="Clear all saved chats">🗑️</button>
+  </header>
+
+  <!-- ── Save Section ───────────────────────────────────── -->
+  <section class="save-section">
+    <div id="platform-badge" class="platform-badge hidden">—</div>
+    <button id="btn-save" class="btn-save" disabled>
+      <span class="btn-icon">💾</span>
+      <span id="btn-save-label">Detecting page…</span>
+    </button>
+    <div id="status-msg" class="status-msg hidden"></div>
+  </section>
+
+  <!-- ── History Section ────────────────────────────────── -->
+  <section class="history-section">
+    <div class="history-header">
+      <span class="history-title">📚 Saved Chats</span>
+      <span id="chat-count" class="badge">0</span>
+    </div>
+
+    <!-- Empty state -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon">💬</div>
+      <p>No chats saved yet.</p>
+      <p class="empty-sub">Open ChatGPT or Gemini and hit Save!</p>
+    </div>
+
+    <!-- Chat list -->
+    <ul id="chat-list" class="chat-list"></ul>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
